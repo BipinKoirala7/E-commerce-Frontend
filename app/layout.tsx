@@ -32,10 +32,6 @@ export const metadata: Metadata = {
   description: "Shop What you like",
 };
 
-/**
- * The Main Layout of the Application
- * @param children the application
- */
 export default function RootLayout({
   children,
 }: Readonly<{
