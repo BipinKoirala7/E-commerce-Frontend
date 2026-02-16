@@ -13,7 +13,7 @@ function NavButton(props: NavButtonT) {
     <Link
       // Uses theme foreground color for hover state
       // Transition timing defined in globals.css (.smooth-transition)
-      className="text-[1.25rem] px-3 py-1 rounded-sm hover:bg-foreground cursor-pointer smooth-transition"
+      className="text-[1.1rem] px-3 py-1 rounded-sm hover:bg-foreground cursor-pointer smooth-transition"
       href={route}
     >
       {name}
