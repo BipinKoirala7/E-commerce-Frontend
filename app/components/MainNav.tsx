@@ -1,8 +1,8 @@
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FiSearch } from "react-icons/fi";
 import IconButton from "./ui/IconButton";
 import { LuUserRound } from "react-icons/lu";
 import NavButton from "./ui/NavButton";
+import Search from "./MainNav/Search";
 
 const MainNav = () => {
   return (
@@ -19,7 +19,7 @@ const MainNav = () => {
         </p>
       </div>
       <div className="h-full flex justify-end gap-4 items-center">
-        <IconButton icon={<FiSearch className="w-6 h-6" />} />
+        <Search />
         <IconButton icon={<LuUserRound className="w-6 h-6" />} />
       </div>
     </div>
