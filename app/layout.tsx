@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${nunito.variable} ${belleza.variable} ${styleScript.variable} antialiased`}
+        className={`${nunito.variable} ${belleza.variable} ${styleScript.variable} antialiased`}
       >
         <div className="flex flex-col w-full h-full text-text">
           <MainNav />
