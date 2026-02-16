@@ -2,6 +2,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FiSearch } from "react-icons/fi";
 import IconButton from "./ui/IconButton";
 import { LuUserRound } from "react-icons/lu";
+import NavButton from "./ui/NavButton";
 
 const MainNav = () => {
   return (
@@ -9,7 +10,7 @@ const MainNav = () => {
       <div className="h-full flex gap-6 items-center">
         <IconButton icon={<RxHamburgerMenu className="w-6 h-6" />} />
         <div className="">
-          <p>Shop</p>
+          <NavButton route="/" name="Shop" />
         </div>
       </div>
       <div className="w-full h-full flex items-center justify-center">
