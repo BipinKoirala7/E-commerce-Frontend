@@ -16,7 +16,7 @@ function ExternalLink({ link, target, className, children }: ExternalLinkT) {
       href={link}
       //    If provided different, otherwise open in new tab.
       target={target ? target : "_blank"}
-      className={`p-1 hover:text-blue-400 cursor-pointer` + className}
+      className={`p-1 cursor-pointer ` + className}
     >
       {children}
     </a>
