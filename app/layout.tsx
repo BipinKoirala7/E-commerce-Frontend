@@ -7,17 +7,20 @@ import "./globals.css";
 import MainNav from "./components/MainNav";
 import Footer from "./components/Footer";
 
+//  Adding Nunito Font for Standard use
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
 });
 
+//  Adding Belleza Font for Header and Specific use
 const belleza = Belleza({
   weight: "400",
   variable: "--font-belleza",
   subsets: ["latin"],
 });
 
+//  Adding Style Script for logo
 const styleScript = Style_Script({
   weight: "400",
   variable: "--font-logo",
@@ -29,6 +32,10 @@ export const metadata: Metadata = {
   description: "Shop What you like",
 };
 
+/**
+ * The Main Layout of the Application
+ * @param children the application
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

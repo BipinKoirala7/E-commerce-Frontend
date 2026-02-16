@@ -7,7 +7,7 @@ import NavButton from "./ui/NavButton";
 const MainNav = () => {
   return (
     <div className="w-full h-16 grid grid-cols-3 items-center px-8 border-b border-b-foreground">
-      <div className="h-full flex gap-6 items-center">
+      <div className="h-full flex gap-4 items-center">
         <IconButton icon={<RxHamburgerMenu className="w-6 h-6" />} />
         <div className="">
           <NavButton route="/" name="Shop" />
