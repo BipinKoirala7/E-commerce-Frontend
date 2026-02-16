@@ -35,6 +35,7 @@ body {
 
 #logo {
     font-family: var(--font-logo);
+    font-weight: bold;
 }
 
 .smooth-transition {

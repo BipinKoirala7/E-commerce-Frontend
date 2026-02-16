@@ -1,15 +1,19 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FiSearch } from "react-icons/fi";
+import IconButton from "./ui/IconButton";
 
 const MainNav = () => {
   return (
-    <div className="w-full flex justify-between items-center px-4 py-3  bg-orange-200">
-      <RxHamburgerMenu />
-      <div>
-        <p id="logo">Obisdian</p>
+    <div className="w-full flex justify-between items-center px-8 py-3">
+      <div className="flex gap-4 items-center">
+        <IconButton icon={<RxHamburgerMenu className="w-6 h-6" />} />
+        <p>Shop</p>
       </div>
+      <p id="logo" className="text-4xl">
+        Obisdian
+      </p>
       <div>
-        <FiSearch />
+        <IconButton icon={<FiSearch className="w-6 h-6" />} />
       </div>
     </div>
   );
