@@ -4,7 +4,7 @@ import ProductList from "./components/Products/ProductList";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4 px-8 py-4">
+    <div className="w-full h-full flex flex-col gap-4 px-8 py-4">
       <div className="flex justify-between">
         <CategoriesOptions />
         <AdjustmentOptions />

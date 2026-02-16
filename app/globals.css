@@ -19,13 +19,16 @@
   }
 } */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-nunito);
+html {
   width: 100dvw;
   max-width: 100dvw;
   height: 100dvh;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-nunito);
   box-sizing: border-box;
 }
 
