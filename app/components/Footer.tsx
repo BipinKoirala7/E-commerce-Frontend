@@ -1,35 +1,20 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import ExternalLink from "./ui/ExternalLink";
+import { FaCopyright } from "react-icons/fa";
+import FooterLinks from "./Footer/FooterLinks";
+import FooterMainSection from "./Footer/FooterMainSection";
 
 /**
  * Main Footer of the Application
  */
 function Footer() {
   return (
-    <div className="bg-text text-background px-8 py-16 grid grid-cols-2">
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-2">
-          <p id="logo" className="text-8xl">
-            Obsidian
-          </p>
-          <p>Where exceptional craftsmanship meets timeless style.</p>
-        </div>
-        <div className="flex gap-6">
-          <ExternalLink link="https://x.com">
-            <FaTwitter className="text-[1.5rem] smooth-transition" />
-          </ExternalLink>
-          <ExternalLink link="https://instagram.com">
-            <FaInstagram className="text-[1.5rem] smooth-transition" />
-          </ExternalLink>
-          <ExternalLink link="https://facebook.com">
-            <FaFacebook className="text-[1.5rem]  smooth-transition" />
-          </ExternalLink>
-          <ExternalLink link="https://linkedin.com">
-            <FaLinkedin className="text-[1.5rem] smooth-transition" />
-          </ExternalLink>
-        </div>
+    <div className="w-full bg-text text-background px-8 pt-16 pb-4 grid grid-cols-2 gap-8">
+      <FooterMainSection />
+      <FooterLinks />
+      <div className="w-full flex gap-1 opacity-50 items-center justify-center col-span-2">
+        <p>Copyrights</p>
+        <FaCopyright />
+        <p>Bipin Koirala. All rights reserved.</p>
       </div>
-      <div></div>
     </div>
   );
 }
