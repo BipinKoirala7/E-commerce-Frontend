@@ -1,15 +1,15 @@
 @import "tailwindcss" layer(base);
 
 :root {
-  --background: #f5f2f2;
-  --foreground: #dddddd;
-  --text: #171717;
+    --background: #f5f2f2;
+    --foreground: #dddddd;
+    --text: #171717;
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-text: var(--text);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-text: var(--text);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -20,28 +20,28 @@
 } */
 
 html {
-  width: 100dvw;
-  max-width: 100dvw;
-  height: 100dvh;
+    width: 100%;
+    max-width: 100dvw;
+    height: 100dvh;
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
-  font-family: var(--font-nunito);
-  box-sizing: border-box;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font-nunito);
+    box-sizing: border-box;
 }
 
 .header-font {
-  font-family: var(--font-belleza);
+    font-family: var(--font-belleza);
 }
 
 #logo {
-  font-family: var(--font-logo);
-  font-weight: bold;
+    font-family: var(--font-logo);
+    font-weight: bold;
 }
 
 .smooth-transition {
-  transition: ease-in-out;
-  transition-duration: 0.25s;
+    transition: ease-in-out;
+    transition-duration: 0.25s;
 }

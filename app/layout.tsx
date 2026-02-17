@@ -6,6 +6,7 @@ import { Style_Script } from "next/font/google";
 import "./globals.css";
 import MainNav from "./components/MainNav";
 import Footer from "./components/Footer";
+import React from "react";
 
 //  Adding Nunito Font for Standard use
 const nunito = Nunito({
