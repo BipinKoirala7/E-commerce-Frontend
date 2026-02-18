@@ -1,14 +1,28 @@
 @import "tailwindcss" layer(base);
 
 :root {
+    /* Color Palette */
     --background: #f5f2f2;
-    --foreground: #dddddd;
+    --foreground: #e8e8e8;
+    --primary: #dddddd;
+    --secondary: #bfbfbf;
+    --green: #48A111;
+    --star: #F2B50B;
     --text: #171717;
+
+    /* Fonts */
+    --font-nunito: "Nunito", sans-serif;
+    --font-belleza: "Belleza", cursive;
+    --font-logo: "Style Script", cursive;
 }
 
 @theme {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-green: var(--green);
+    --color-star: var(--star);
     --color-text: var(--text);
 }
 
@@ -28,16 +42,16 @@ html {
 body {
     background: var(--background);
     color: var(--text);
-    font-family: var(--font-nunito);
+    font-family: var(--font-nunito), sans-serif;
     box-sizing: border-box;
 }
 
 .header-font {
-    font-family: var(--font-belleza);
+    font-family: var(--font-belleza), sans-serif;
 }
 
 #logo {
-    font-family: var(--font-logo);
+    font-family: var(--font-logo), monospace;
     font-weight: bold;
 }
 

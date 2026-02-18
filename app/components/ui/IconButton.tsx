@@ -8,14 +8,14 @@ type IconButtonT = {
 };
 
 function IconButton(props: IconButtonT) {
-  const { icon, className } = props;
+  const {icon, className} = props;
   return (
     <button
       onClick={() => console.log("Button Clicked")}
       // Uses theme foreground color for hover state
       // Transition timing defined in globals.css (.smooth-transition)
       className={
-        `flex items-center justify-center p-1 rounded-sm hover:bg-foreground cursor-pointer smooth-transition` +
+        `flex items-center justify-center p-1.5 rounded-sm hover:bg-foreground cursor-pointer smooth-transition ` +
         className
       }
     >
