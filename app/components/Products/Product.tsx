@@ -4,9 +4,13 @@ import Hoodie from "@/public/Hoodie.webp";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import {Variants} from "motion";
-import ProductOptions from "@/app/components/Products/ProductOptions";
+import ProductInfo from "@/app/components/Products/ProductInfo";
+import ProductActions from "@/app/components/Products/ProductActions";
+import {useMotionValue} from "framer-motion";
 
 function Product() {
+  const show = useMotionValue(0);
+
   //  Product Card Variants. Don't change the name ("hidden" and "visible"). Inherited from parent.
   const variants: Variants = {
     //  Start at 10px from the bottom
@@ -15,6 +19,8 @@ function Product() {
   }
   return (
     <motion.div
+      onMouseEnter={() => show.set(1)}
+      onMouseLeave={() => show.set(0)}
       variants={variants}
       className="relative flex flex-col rounded-lg border border-primary overflow-hidden cursor-pointer">
       <div className={"relative aspect-5/6"}>
@@ -26,7 +32,8 @@ function Product() {
           loading="eager"
         />
       </div>
-      <ProductOptions/>
+      <ProductActions show={show}/>
+      <ProductInfo show={show}/>
     </motion.div>
   );
 }
