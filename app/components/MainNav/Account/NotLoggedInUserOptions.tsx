@@ -1,10 +1,10 @@
-import Button from "../../ui/Button";
+import NavButton from "../../ui/NavButton";
 
 function NotLoggedInUserOptions() {
   return (
     <div className="flex gap-2">
-      <Button name="Login" />
-      <Button name="Sign Up" />
+      <NavButton route="/auth/login" name="Login" />
+      <NavButton route="/auth/register" name="Sign Up" />
     </div>
   );
 }
