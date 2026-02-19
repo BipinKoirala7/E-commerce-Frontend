@@ -44,7 +44,9 @@ export default function RootLayout({
         className={`flex flex-col w-full min-h-screen text-text ${nunito.variable} ${belleza.variable} ${styleScript.variable} antialiased`}
       >
         <MainNav />
-        <main className="w-full flex-1 text-text">{children}</main>
+        <main className="w-full flex-1 text-text flex items-center justify-center">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

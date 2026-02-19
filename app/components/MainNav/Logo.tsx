@@ -1,5 +1,4 @@
 import Link from "next/link";
-import NavButton from "../ui/NavButton";
 
 function Logo() {
   return (
