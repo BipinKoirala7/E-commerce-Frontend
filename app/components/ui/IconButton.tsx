@@ -5,13 +5,15 @@ type IconButtonT = {
   icon: React.ReactNode;
   //  Any additional classes for additional style
   className?: string;
+  //  Function for onClick
+  onClick?: () => void;
 };
 
 function IconButton(props: IconButtonT) {
-  const {icon, className} = props;
+  const { icon, className, onClick } = props;
   return (
     <button
-      onClick={() => console.log("Button Clicked")}
+      onClick={onClick}
       // Uses theme foreground color for hover state
       // Transition timing defined in globals.css (.smooth-transition)
       className={

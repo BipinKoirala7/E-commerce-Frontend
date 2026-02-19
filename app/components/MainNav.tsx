@@ -1,5 +1,5 @@
 import Search from "./MainNav/Search";
-import Account from "./MainNav/Account";
+import Account from "./MainNav/Account/Account";
 import Logo from "./MainNav/Logo";
 import Menus from "./MainNav/Menus";
 
