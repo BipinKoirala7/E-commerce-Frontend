@@ -1,28 +1,15 @@
 import { userStore } from "../store/zustand";
 import { ApiResponseT, UserLoginT, UserT } from "./../types";
+import { api } from "./axios";
 
 async function handleEmailSignup(userInfo: UserLoginT) {
   const url = "http://localhost:4000/api/auth/register";
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(userInfo),
-    headers: {
-      Content: "application/json",
-    },
-  });
-
-  if (response.ok) {
-    console.log("Logging in Failed");
-    console.log(response.status);
+  try {
+    const response = await api.post<ApiResponseT<UserT>>(url, userInfo);
+    userStore((state) => state.setUser(response.data.data));
+  } catch (error) {
+    console.error("Signup failed:", error);
   }
-
-  const data: ApiResponseT<UserT> = await response.json();
-
-  if (data.success) {
-    console.log("Failed");
-    console.log(data.message);
-  }
-  userStore((state) => state.setUser(data.data));
 }
 
 function handleGoogleAuth() {
