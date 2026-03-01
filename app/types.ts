@@ -14,8 +14,13 @@ export type UserT = {
   updatedAt: Date;
 };
 
-export type UserLoginT = {
+export type UserRegisterT = {
   userName: string;
+  email: string;
+  password: string;
+};
+
+export type UserLoginT = {
   email: string;
   password: string;
 };
