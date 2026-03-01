@@ -28,7 +28,7 @@ export default function Account() {
             <p className="w-fit text-white rounded-md px-3 py-1 bg-red-500">
               False
             </p>
-            <button className="bg-green-500 text-white rounded-md px-3 py-1">
+            <button className="bg-green-500 text-white rounded-md px-3 py-1 cursor-pointer hover:bg-green-600 smooth-transition">
               Verify Email
             </button>
           </div>
