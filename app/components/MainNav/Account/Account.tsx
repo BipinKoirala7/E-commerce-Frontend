@@ -5,7 +5,7 @@ import LoggedInUserOptions from "./LoggedInUserOptions";
 import NotLoggedInUserOptions from "./NotLoggedInUserOptions";
 
 function Account() {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true); // Placeholder for user authentication state
   return isUserLoggedIn ? <LoggedInUserOptions /> : <NotLoggedInUserOptions />;
 }
 export default Account;
