@@ -3,7 +3,7 @@ import { ApiResponseT, UserLoginT, UserRegisterT, UserT } from "./../types";
 import { api } from "./axios";
 
 async function handleEmailSignup(userInfo: UserRegisterT) {
-  const url = "http://localhost:4000/api/auth/register";
+  const url = process.env.NEXT_PUBLIC_BASE_USER_EMAIL_REGISTER_URL as string;
   try {
     const response = await api.post<ApiResponseT<UserT>>(url, userInfo);
     userStore((state) => state.setUser(response.data.data));
@@ -13,12 +13,12 @@ async function handleEmailSignup(userInfo: UserRegisterT) {
 }
 
 function handleGoogleAuth() {
-  const url = "http://localhost:4000/api/auth/oauth/google";
+  const url = process.env.NEXT_PUBLIC_BASE_USER_GOOGLE_LOGIN_URL as string;
   window.location.href = url;
 }
 
 async function handleEmailLogin(userInfo: UserLoginT) {
-  const url = "http://localhost:4000/api/auth/login";
+  const url = process.env.NEXT_PUBLIC_BASE_USER_EMAIL_LOGIN_URL as string;
   try {
     const response = await api.post<ApiResponseT<UserT>>(url, userInfo);
     userStore((state) => state.setUser(response.data.data));

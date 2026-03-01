@@ -7,6 +7,7 @@ import "./globals.css";
 import MainNav from "./components/MainNav/MainNav";
 import Footer from "./components/Footer/Footer";
 import React from "react";
+import { loadUser } from "./lib/lib";
 
 //  Adding Nunito Font for Standard use
 const nunito = Nunito({
@@ -38,6 +39,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  loadUser();
   return (
     <html lang="en">
       <body
