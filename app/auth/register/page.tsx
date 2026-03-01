@@ -1,5 +1,6 @@
 "use client";
 
+import { handleGoogleAuth, handleEmailSignup } from "@/app/lib/auth";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
@@ -14,7 +15,10 @@ function Page() {
   return (
     <div className="min-w-[33%] h-full bg-foreground mt-8 mb-8 flex flex-col gap-4 items-center justify-center p-8 rounded-2xl">
       <p className="header-font text-6xl">Register</p>
-      <button className="bg-primary w-full flex items-center justify-center cursor-pointer gap-2 px-4 py-2 rounded-lg hover:bg-secondary smooth-transition">
+      <button
+        className="bg-primary w-full flex items-center justify-center cursor-pointer gap-2 px-4 py-2 rounded-lg hover:bg-secondary smooth-transition"
+        onClick={() => handleGoogleAuth()}
+      >
         <FcGoogle className="text-[2rem]" />
         <p>Continue with Google</p>
       </button>
@@ -62,7 +66,10 @@ function Page() {
           />
         </div>
       </div>
-      <button className="w-full flex bg-primary py-2 justify-center hover:bg-secondary rounded-lg cursor-pointer smooth-transition">
+      <button
+        className="w-full flex bg-primary py-2 justify-center hover:bg-secondary rounded-lg cursor-pointer smooth-transition"
+        onClick={() => handleEmailSignup({ userName, email, password })}
+      >
         Register
       </button>
     </div>

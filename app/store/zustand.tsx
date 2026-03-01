@@ -5,7 +5,7 @@ export type UserStoreT = {
   user: UserT | null;
   setUser: (user: UserT | null) => void;
   removeUser: () => void;
-  isAuthenticated: () => void;
+  isAuthenticated: () => boolean;
 };
 
 const userStore = create<UserStoreT>((set, get) => ({

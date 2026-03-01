@@ -1,6 +1,6 @@
-import FooterLinks from "./Footer/FooterLinks";
-import FooterMainSection from "./Footer/FooterMainSection";
-import FooterCopyrightLabel from "./Footer/FooterCopyrightLabel";
+import FooterLinks from "./FooterLinks";
+import FooterMainSection from "./FooterMainSection";
+import FooterCopyrightLabel from "./FooterCopyrightLabel";
 
 /**
  * Main Footer of the Application

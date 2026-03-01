@@ -17,16 +17,22 @@ function LoggedInUserOptions() {
       />
       <AnimatePresence>
         {show && (
-          <div className="absolute right-full top-full mt-2 z-10 min-w-40 bg-primary border border-foreground p-2 rounded-xl">
+          <div className="absolute right-full top-full mt-2 z-10 min-w-40 bg-foreground border border-foreground p-2 rounded-xl">
             <Button
               name="Account"
-              className="w-full"
-              onClick={() => router.push("/account")}
+              className="w-full hover:bg-primary"
+              onClick={() => {
+                router.push("/account");
+                setShow(false);
+              }}
             />
             <Button
               name="Log Out"
-              className="w-full"
-              onClick={() => router.push("/logout")}
+              className="w-full hover:bg-primary"
+              onClick={() => {
+                router.push("/logout");
+                setShow(false);
+              }}
             />
           </div>
         )}

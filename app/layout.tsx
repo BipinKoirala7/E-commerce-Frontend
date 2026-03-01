@@ -4,8 +4,8 @@ import { Belleza } from "next/font/google";
 import { Style_Script } from "next/font/google";
 
 import "./globals.css";
-import MainNav from "./components/MainNav";
-import Footer from "./components/Footer";
+import MainNav from "./components/MainNav/MainNav";
+import Footer from "./components/Footer/Footer";
 import React from "react";
 
 //  Adding Nunito Font for Standard use

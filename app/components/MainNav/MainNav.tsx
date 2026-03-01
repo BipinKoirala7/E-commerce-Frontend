@@ -1,7 +1,7 @@
-import Search from "./MainNav/Search";
-import Account from "./MainNav/Account/Account";
-import Logo from "./MainNav/Logo";
-import Menus from "./MainNav/Menus";
+import Search from "./Search";
+import UserOptions from "./UserOptions/UserOptions";
+import Logo from "./Logo";
+import Menus from "./Menus";
 
 const MainNav = () => {
   return (
@@ -10,7 +10,7 @@ const MainNav = () => {
       <Logo />
       <div className="h-full flex justify-end gap-4 items-center">
         <Search />
-        <Account />
+        <UserOptions />
       </div>
     </div>
   );
