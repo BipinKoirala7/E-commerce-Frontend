@@ -13,3 +13,17 @@ export type UserT = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type UserLoginT = {
+  userName: string;
+  email: string;
+  password: string;
+};
+
+export type ApiResponseT<T> = {
+  statusCode: number;
+  success: boolean;
+  data: T;
+  message: string;
+  timestamp: string;
+};
