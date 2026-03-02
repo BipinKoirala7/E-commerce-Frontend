@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { UserT } from "@/app/types";
+import { UserT } from "@/types";
 import { userStore } from "@/store/zustand";
 
 export default function Account() {

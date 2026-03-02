@@ -1,5 +1,5 @@
 import { setUser } from "../store/zustand";
-import { ApiResponseT, UserT } from "../app/types";
+import { ApiResponseT, UserT } from "../types";
 import { api } from "./axios";
 
 async function loadUser() {

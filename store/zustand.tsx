@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { UserT } from "../app/types";
+import { UserT } from "../types";
 
 export type UserStoreT = {
   user: UserT | null;

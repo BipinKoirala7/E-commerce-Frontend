@@ -56,3 +56,10 @@ html {
   transition: ease-in-out;
   transition-duration: 0.25s;
 }
+
+.single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
