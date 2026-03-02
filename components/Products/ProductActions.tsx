@@ -6,7 +6,7 @@ type ProductInfoProps = {
   show: MotionValue<number>;
 };
 
-import IconButton from "@/app/components/ui/IconButton";
+import IconButton from "@/components/ui/IconButton";
 import { BsPatchPlus } from "react-icons/bs";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import * as motion from "motion/react-client";

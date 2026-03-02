@@ -1,5 +1,5 @@
 import { userStore } from "../store/zustand";
-import { ApiResponseT, UserLoginT, UserRegisterT, UserT } from "./../types";
+import { ApiResponseT, UserLoginT, UserRegisterT, UserT } from "../app/types";
 import { api } from "./axios";
 
 async function handleEmailSignup(userInfo: UserRegisterT) {

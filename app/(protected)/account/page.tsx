@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import image from "@/public/image.jpg";
 import { UserT } from "@/app/types";
-import { userStore } from "@/app/store/zustand";
+import { userStore } from "@/store/zustand";
 
 export default function Account() {
   const userInfo: UserT | null = userStore((state) => state.user);

@@ -4,10 +4,9 @@ import { Belleza } from "next/font/google";
 import { Style_Script } from "next/font/google";
 
 import "./globals.css";
-import MainNav from "./components/MainNav/MainNav";
-import Footer from "./components/Footer/Footer";
+import MainNav from "../components/MainNav/MainNav";
+import Footer from "../components/Footer/Footer";
 import React from "react";
-import { loadUser } from "./lib/lib";
 
 //  Adding Nunito Font for Standard use
 const nunito = Nunito({
@@ -34,12 +33,11 @@ export const metadata: Metadata = {
   description: "Shop What you like",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  loadUser();
   return (
     <html lang="en">
       <body

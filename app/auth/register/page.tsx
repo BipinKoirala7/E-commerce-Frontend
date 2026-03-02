@@ -1,6 +1,6 @@
 "use client";
 
-import { handleGoogleAuth, handleEmailSignup } from "@/app/lib/auth";
+import { handleGoogleAuth, handleEmailSignup } from "@/lib/auth";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 

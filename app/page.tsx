@@ -1,6 +1,6 @@
-import CategoriesOptions from "./components/Home/CategoriesOptions";
-import AdjustmentOptions from "./components/Home/AdjustmentOptions";
-import ProductList from "./components/Products/ProductList";
+import CategoriesOptions from "../components/Home/CategoriesOptions";
+import AdjustmentOptions from "../components/Home/AdjustmentOptions";
+import ProductList from "../components/Products/ProductList";
 
 export default function Home() {
   return (

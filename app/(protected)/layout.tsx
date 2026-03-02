@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { userStore } from "../store/zustand";
+import { userStore } from "../../store/zustand";
 import { useEffect } from "react";
 
 function Layout({ children }: { children: React.ReactNode }) {
