@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 
-import image from "@/public/image.jpg";
 import { UserT } from "@/app/types";
 import { userStore } from "@/store/zustand";
 
 export default function Account() {
-  const userInfo: UserT | null = userStore((state) => state.user);
-  if (!userInfo) {
+  const user: UserT | null = userStore((state) => state.user);
+  if (!user) {
     return null;
   }
   return (
@@ -21,7 +20,7 @@ export default function Account() {
             <input
               type="text"
               className="bg-primary outline-none rounded-md p-2 w-full text-[1rem]"
-              value={"Bipin Koirala"} //  Replace with actual username from user data
+              value={user.userName} //  Replace with actual username from user data
             />
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
@@ -29,44 +28,47 @@ export default function Account() {
             <input
               type="text"
               className="bg-primary outline-none rounded-md p-2 w-full text-[1rem]"
-              value={"bipin.123@gmail.com"} //  Replace with actual email from user data
+              value={user.email} //  Replace with actual email from user data
             />
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Email Verified: </p>
             <div className="flex gap-4">
               <p className="w-fit text-white rounded-md px-3 py-1 bg-red-500">
-                False
+                {user.emailVerified ? "Verified" : "Not Verified"}
               </p>
-              <button className="bg-green-500 text-white rounded-md px-3 py-1 cursor-pointer hover:bg-green-600 smooth-transition">
-                Verify Email
-              </button>
+              {!user.emailVerified && (
+                <button className="bg-green-500 text-white rounded-md px-3 py-1 cursor-pointer hover:bg-green-600 smooth-transition">
+                  Verify Email
+                </button>
+              )}
             </div>
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Role: </p>
-            <p>User</p>
+            <p>{user.role}</p>
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Profile Picture: </p>
             <Image
-              src={image}
+              src={user.profilePictureUrl || "/default-profile.png"} //  Replace with actual profile picture URL from user data or use a default image
               alt="Profile Picture"
               width={100}
+              height={100}
               className="rounded-full aspect-square object-cover"
             />
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Last login: </p>
-            <p>{new Date().toLocaleString()}</p>
+            <p>{new Date(user.lastLoginAt).toLocaleString()}</p>
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Created At: </p>
-            <p>{new Date().toLocaleString()}</p>
+            <p>{new Date(user.createdAt).toLocaleString()}</p>
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Updated At: </p>
-            <p>{new Date().toLocaleString()}</p>
+            <p>{new Date(user.updatedAt).toLocaleString()}</p>
           </div>
         </div>
       </div>
