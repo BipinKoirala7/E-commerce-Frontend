@@ -20,7 +20,7 @@ export default function Account() {
             <input
               type="text"
               className="bg-primary outline-none rounded-md p-2 w-full text-[1rem]"
-              value={user.userName} //  Replace with actual username from user data
+              value={user.userName}
             />
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
@@ -28,7 +28,7 @@ export default function Account() {
             <input
               type="text"
               className="bg-primary outline-none rounded-md p-2 w-full text-[1rem]"
-              value={user.email} //  Replace with actual email from user data
+              value={user.email}
             />
           </div>
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
@@ -51,7 +51,7 @@ export default function Account() {
           <div className="grid grid-cols-[30%_70%] gap-4 items-center">
             <p className="text-[1rem]">Profile Picture: </p>
             <Image
-              src={user.profilePictureUrl || "/default-profile.png"} //  Replace with actual profile picture URL from user data or use a default image
+              src={user.profilePictureUrl || "/default-profile.png"}
               alt="Profile Picture"
               width={100}
               height={100}

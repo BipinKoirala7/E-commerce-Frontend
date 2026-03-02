@@ -1,19 +1,16 @@
-import { LuUserRound } from "react-icons/lu";
-import IconButton from "../../ui/IconButton";
+import Button from "@/components/ui/Button";
+import IconButton from "@/components/ui/IconButton";
 import { AnimatePresence } from "motion/react";
-import Button from "../../ui/Button";
-import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { PiShoppingCartSimple } from "react-icons/pi";
 
-function LoggedInUserOptions() {
+function CartOption() {
   const [show, setShow] = useState(false);
-  const parent = useRef<HTMLDivElement>(null);
-  const router = useRouter();
   return (
-    <div ref={parent} className="relative">
+    <div className="relative">
       <IconButton
         onClick={() => setShow(!show)}
-        icon={<LuUserRound className="w-6 h-6" />}
+        icon={<PiShoppingCartSimple className="w-6 h-6" />}
       />
       <AnimatePresence>
         {show && (
@@ -22,7 +19,6 @@ function LoggedInUserOptions() {
               name="Account"
               className="w-full hover:bg-primary"
               onClick={() => {
-                router.push("/account");
                 setShow(false);
               }}
             />
@@ -30,7 +26,6 @@ function LoggedInUserOptions() {
               name="Log Out"
               className="w-full hover:bg-primary"
               onClick={() => {
-                router.push("/logout");
                 setShow(false);
               }}
             />
@@ -41,4 +36,4 @@ function LoggedInUserOptions() {
   );
 }
 
-export default LoggedInUserOptions;
+export default CartOption;

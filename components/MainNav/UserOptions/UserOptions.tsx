@@ -1,6 +1,6 @@
 "use client";
 
-import LoggedInUserOptions from "./LoggedInUserOptions";
+import LoggedInUserOptions from "./LoggedInUserOptions/LoggedInUserOptions";
 import NotLoggedInUserOptions from "./NotLoggedInUserOptions";
 import { userStore } from "@/store/zustand";
 
