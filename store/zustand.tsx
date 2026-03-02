@@ -15,4 +15,7 @@ const userStore = create<UserStoreT>((set, get) => ({
   isAuthenticated: () => !!get().user,
 }));
 
-export { userStore };
+const setUser = (user: UserT | null) =>
+  userStore.setState((state) => ({ ...state, user }));
+
+export { userStore, setUser };

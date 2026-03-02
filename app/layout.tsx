@@ -7,6 +7,7 @@ import "./globals.css";
 import MainNav from "../components/MainNav/MainNav";
 import Footer from "../components/Footer/Footer";
 import React from "react";
+import UserProvider from "@/Context/UserProvider";
 
 //  Adding Nunito Font for Standard use
 const nunito = Nunito({
@@ -43,11 +44,13 @@ export default async function RootLayout({
       <body
         className={`flex flex-col w-full min-h-screen text-text ${nunito.variable} ${belleza.variable} ${styleScript.variable} antialiased`}
       >
-        <MainNav />
-        <main className="w-full min-h-screen flex-1 text-text flex justify-center">
-          {children}
-        </main>
-        <Footer />
+        <UserProvider>
+          <MainNav />
+          <main className="w-full min-h-screen flex-1 text-text flex justify-center">
+            {children}
+          </main>
+          <Footer />
+        </UserProvider>
       </body>
     </html>
   );
