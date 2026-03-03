@@ -8,7 +8,22 @@ export type UserStoreT = {
   isAuthenticated: () => boolean;
 };
 
-const userStore = create<UserStoreT>((set, get) => ({
+export type SearchParamsStoreT = {
+  query: string;
+  category: string;
+  sort: string;
+  filter: string;
+  priceRange: string;
+  sortBy: string;
+  setQuery: (query: string) => void;
+  setCategory: (category: string) => void;
+  setSort: (sort: string) => void;
+  setFilter: (filter: string) => void;
+  setPriceRange: (priceRange: string) => void;
+  setSortBy: (sortBy: string) => void;
+};
+
+const useUserStore = create<UserStoreT>((set, get) => ({
   user: null,
   setUser: (user) => set({ user }),
   removeUser: () => set({ user: null }),
@@ -16,6 +31,21 @@ const userStore = create<UserStoreT>((set, get) => ({
 }));
 
 const setUser = (user: UserT | null) =>
-  userStore.setState((state) => ({ ...state, user }));
+  useUserStore.setState((state) => ({ ...state, user }));
 
-export { userStore, setUser };
+const useSearchParamsStore = create<SearchParamsStoreT>((set) => ({
+  query: "",
+  category: "",
+  sort: "",
+  filter: "",
+  priceRange: "",
+  sortBy: "",
+  setQuery: (query) => set({ query }),
+  setCategory: (category) => set({ category }),
+  setSort: (sort) => set({ sort }),
+  setFilter: (filter) => set({ filter }),
+  setPriceRange: (priceRange) => set({ priceRange }),
+  setSortBy: (sortBy) => set({ sortBy }),
+}));
+
+export { useUserStore, setUser, useSearchParamsStore };

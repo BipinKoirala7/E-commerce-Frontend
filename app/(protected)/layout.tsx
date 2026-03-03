@@ -1,12 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { userStore } from "../../store/zustand";
+import { useUserStore } from "../../store/zustand";
 import { useEffect } from "react";
 
 function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const isAuthenticated = userStore((state) => state.isAuthenticated());
+  const isAuthenticated = useUserStore((state) => state.isAuthenticated());
 
   useEffect(() => {
     if (!isAuthenticated) {

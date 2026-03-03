@@ -3,10 +3,10 @@
 import Image from "next/image";
 
 import { UserT } from "@/types";
-import { userStore } from "@/store/zustand";
+import { useUserStore } from "@/store/zustand";
 
 export default function Account() {
-  const user: UserT | null = userStore((state) => state.user);
+  const user: UserT | null = useUserStore((state) => state.user);
   if (!user) {
     return null;
   }

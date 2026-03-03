@@ -2,10 +2,10 @@
 
 import LoggedInUserOptions from "./LoggedInUserOptions/LoggedInUserOptions";
 import NotLoggedInUserOptions from "./NotLoggedInUserOptions";
-import { userStore } from "@/store/zustand";
+import { useUserStore } from "@/store/zustand";
 
 function UserOptions() {
-  const isAuthenticated = userStore((state) => state.isAuthenticated());
+  const isAuthenticated = useUserStore((state) => state.isAuthenticated());
   return isAuthenticated ? <LoggedInUserOptions /> : <NotLoggedInUserOptions />;
 }
 export default UserOptions;
