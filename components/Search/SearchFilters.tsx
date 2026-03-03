@@ -1,12 +1,11 @@
-import React from "react";
-import AdjustmentOptions from "../Home/AdjustmentOptions";
-import CategoriesOptions from "../Home/CategoriesOptions";
+import Filter from "./Filter/Filter";
+import SortBy from "./SortBy/SortBy";
 
 function SearchFilters() {
   return (
-    <div className="flex justify-between">
-      <CategoriesOptions />
-      <AdjustmentOptions />
+    <div className="flex justify-end">
+      <Filter />
+      <SortBy />
     </div>
   );
 }

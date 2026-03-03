@@ -1,4 +1,4 @@
-import NavButton from "../../ui/NavButton";
+import NavButton from "@/components/ui/NavButton";
 
 function NotLoggedInUserOptions() {
   return (

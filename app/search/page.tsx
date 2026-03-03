@@ -12,7 +12,8 @@ function Page() {
         Category: {searchParamsStore.category || "No category provided"}
       </div>
       <div>
-        Price Range: {searchParamsStore.priceRange || "No price range provided"}
+        Price Range: {searchParamsStore.minPrice} -{" "}
+        {searchParamsStore.maxPrice || "No max price provided"}
       </div>
       <div>Sort By: {searchParamsStore.sortBy || "No sort by provided"}</div>
     </div>

@@ -11,15 +11,14 @@ export type UserStoreT = {
 export type SearchParamsStoreT = {
   query: string;
   category: string;
-  sort: string;
   filter: string;
-  priceRange: string;
+  minPrice: string;
+  maxPrice: string;
   sortBy: string;
   setQuery: (query: string) => void;
   setCategory: (category: string) => void;
-  setSort: (sort: string) => void;
   setFilter: (filter: string) => void;
-  setPriceRange: (priceRange: string) => void;
+  setPriceRange: (minPrice: string, maxPrice: string) => void;
   setSortBy: (sortBy: string) => void;
 };
 
@@ -33,18 +32,18 @@ const useUserStore = create<UserStoreT>((set, get) => ({
 const setUser = (user: UserT | null) =>
   useUserStore.setState((state) => ({ ...state, user }));
 
+// Need to change the maxPrice according to the max price of the products that came
 const useSearchParamsStore = create<SearchParamsStoreT>((set) => ({
   query: "",
   category: "",
-  sort: "",
   filter: "",
-  priceRange: "",
+  minPrice: "",
+  maxPrice: "9999",
   sortBy: "",
   setQuery: (query) => set({ query }),
   setCategory: (category) => set({ category }),
-  setSort: (sort) => set({ sort }),
   setFilter: (filter) => set({ filter }),
-  setPriceRange: (priceRange) => set({ priceRange }),
+  setPriceRange: (minPrice, maxPrice) => set({ minPrice, maxPrice }),
   setSortBy: (sortBy) => set({ sortBy }),
 }));
 

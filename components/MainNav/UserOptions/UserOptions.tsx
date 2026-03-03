@@ -1,7 +1,7 @@
 "use client";
 
 import LoggedInUserOptions from "./LoggedInUserOptions/LoggedInUserOptions";
-import NotLoggedInUserOptions from "./NotLoggedInUserOptions";
+import NotLoggedInUserOptions from "./NotLoggedInUserOptions/NotLoggedInUserOptions";
 import { useUserStore } from "@/store/zustand";
 
 function UserOptions() {

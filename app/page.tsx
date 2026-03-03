@@ -1,5 +1,5 @@
 import CategoriesOptions from "../components/Home/CategoriesOptions";
-import AdjustmentOptions from "../components/Home/AdjustmentOptions";
+import AdjustmentOptions from "../components/Home/FilterOptions";
 import ProductList from "../components/Products/ProductList";
 
 export default function Home() {
