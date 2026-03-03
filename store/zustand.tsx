@@ -26,7 +26,7 @@ const useUserStore = create<UserStoreT>((set, get) => ({
   user: null,
   setUser: (user) => set({ user }),
   removeUser: () => set({ user: null }),
-  isAuthenticated: () => !!get().user,
+  isAuthenticated: () => !get().user,
 }));
 
 const setUser = (user: UserT | null) =>
