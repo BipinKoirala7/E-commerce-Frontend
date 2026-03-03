@@ -1,7 +1,12 @@
 import { Product } from "@/types";
 import CartSmallCard from "./CartSmallCard";
+import IconButton from "../ui/IconButton";
+
+import { GoArrowUpRight } from "react-icons/go";
+import { useRouter } from "next/navigation";
 
 function NavCartList() {
+  const router = useRouter();
   const products: Product[] = [];
 
   const empty = (
@@ -12,7 +17,16 @@ function NavCartList() {
 
   return (
     <div className="h-full flex flex-col gap-1">
-      <p className="text-xl header-font ml-1.5">Cart</p>
+      <div className="flex items-center justify-between">
+        <p className="text-xl header-font ml-1.5">Cart</p>
+        <IconButton
+          icon={<GoArrowUpRight className="w-5 h-5" />}
+          className="hover:bg-primary"
+          onClick={() => {
+            router.push("/cart");
+          }}
+        />
+      </div>
       {products.length === 0 ? (
         empty
       ) : (

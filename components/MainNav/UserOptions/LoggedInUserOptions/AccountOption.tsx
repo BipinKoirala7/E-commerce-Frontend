@@ -15,7 +15,7 @@ function AccountOption() {
         onClick={() => setShow(!show)}
         icon={<LuUserRound className="w-6 h-6" />}
       />
-      <Modal show={show}>
+      <Modal show={show} className="w-full min-w-40 max-w-80">
         <div className="flex flex-col gap-2">
           <Button
             name="Account"
