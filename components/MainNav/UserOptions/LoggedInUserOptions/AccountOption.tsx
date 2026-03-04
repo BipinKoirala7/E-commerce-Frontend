@@ -26,6 +26,14 @@ function AccountOption() {
             }}
           />
           <Button
+            name="Orders"
+            className="w-full hover:bg-primary"
+            onClick={() => {
+              router.push("/orders");
+              setShow(false);
+            }}
+          />
+          <Button
             name="Log Out"
             className="w-full hover:bg-primary"
             onClick={() => {

@@ -4,12 +4,12 @@ export enum Role {
 }
 
 export enum OrderStatus {
-  PENDING,
-  CONFIRMED,
-  PROCESSING,
-  DELIVERED,
-  CANCELLED,
-  RETURNED,
+  PENDING = "PENDING",
+  CONFIRMED = "CONFIRMED",
+  PROCESSING = "PROCESSING",
+  DELIVERED = "DELIVERED",
+  CANCELLED = "CANCELLED",
+  RETURNED = "RETURNED",
 }
 
 export interface User {
@@ -91,7 +91,7 @@ export interface Order {
   orderItems: OrderItem[];
   totalPrice: number;
   orderStatus: OrderStatus;
-  createdAt?: Date;
+  createdAt: Date;
   updatedAt: Date;
 }
 
