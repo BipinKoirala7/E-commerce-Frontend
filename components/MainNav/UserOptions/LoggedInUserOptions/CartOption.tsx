@@ -3,7 +3,7 @@ import { PiShoppingCartSimple } from "react-icons/pi";
 
 import IconButton from "@/components/ui/IconButton";
 import Modal from "@/components/ui/Modal";
-import NavCartList from "@/components/Cart/NavCartList";
+import NavCartList from "@/components/Cart/NavCartList/NavCartList";
 
 function CartOption() {
   const [show, setShow] = useState(false);
