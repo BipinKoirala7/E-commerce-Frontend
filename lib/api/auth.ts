@@ -1,6 +1,6 @@
-import { setUser } from "../store/zustand";
-import { ApiResponseT, UserLoginT, UserRegisterT, UserT } from "../types";
-import { api } from "./axios";
+import { setUser } from "@/store/zustand";
+import { ApiResponseT, UserLoginT, UserRegisterT, UserT } from "@/types";
+import { api } from "@/lib/axios";
 
 async function handleEmailSignup(userInfo: UserRegisterT) {
   const url = process.env.NEXT_PUBLIC_BASE_USER_EMAIL_REGISTER_URL as string;

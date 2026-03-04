@@ -1,36 +1,37 @@
 "use client";
 
-import { Product } from "@/types";
+import { WishListProductSummary } from "@/types";
+import IconButton from "@/components/ui/IconButton";
+
 import Image from "next/image";
 import { useState } from "react";
-import IconButton from "../ui/IconButton";
 import { TiMinus } from "react-icons/ti";
 import { BsPatchPlus } from "react-icons/bs";
 
 type WishlistSmallCardProps = {
-  product: Product;
+  product: WishListProductSummary;
 };
 
 function WishlistSmallCard({ product }: WishlistSmallCardProps) {
   const [showOptions, setShowOptions] = useState(false);
   return (
     <div
-      key={product.id}
+      key={product.productId}
       onMouseEnter={() => setShowOptions(true)}
       onMouseLeave={() => setShowOptions(false)}
       className="p-2 rounded-sm flex items-center space-x-4 overflow-hidden cursor-pointer hover:bg-primary smooth-transition"
     >
       <Image
-        src={product.imageUrl}
-        alt={product.name}
+        src={product.productImageUrl}
+        alt={product.productName}
         width={60}
         height={60}
         className="w-16 aspect-4/3 rounded object-cover"
       />
       <div className="relative flex flex-col gap-1 overflow-hidden">
-        <p className="text-md font-medium single-line">{product.name}</p>
+        <p className="text-md font-medium single-line">{product.productName}</p>
         <p className="text-sm text-muted-foreground">
-          ${product.price.toFixed(2)}
+          ${product.productPrice.toFixed(2)}
         </p>
       </div>
       <div

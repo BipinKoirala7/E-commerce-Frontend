@@ -1,9 +1,18 @@
 export enum Role {
-  USER = "USER",
-  ADMIN = "ADMIN",
+  USER,
+  ADMIN,
 }
 
-export type UserT = {
+export enum OrderStatus {
+  PENDING,
+  CONFIRMED,
+  PROCESSING,
+  DELIVERED,
+  CANCELLED,
+  RETURNED,
+}
+
+export interface User {
   userName: string;
   email: string;
   emailVerified: boolean;
@@ -12,18 +21,18 @@ export type UserT = {
   lastLoginAt: Date;
   createdAt: Date;
   updatedAt: Date;
-};
+}
 
-export type UserRegisterT = {
+export interface UserRegister {
   userName: string;
   email: string;
   password: string;
-};
+}
 
-export type UserLoginT = {
+export interface UserLogin {
   email: string;
   password: string;
-};
+}
 
 export type ApiResponseT<T> = {
   statusCode: number;
@@ -32,6 +41,19 @@ export type ApiResponseT<T> = {
   message: string;
   timestamp: string;
 };
+
+export interface WishList {
+  productId: string;
+  createdAt: Date;
+}
+
+export interface CartItem {
+  id: string;
+  productId: string;
+  quantity: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 export interface Product {
   id: string;
@@ -46,3 +68,40 @@ export interface Product {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface ProductSummary {
+  productId: string;
+  productName: string;
+  productPrice: number;
+  productImageUrl: string;
+}
+
+export interface OrderItem {
+  id: string;
+  productId: string;
+  quantity: number;
+}
+
+export interface Order {
+  id: string;
+  billingAddress: string;
+  shippingAddress: string;
+  email: string;
+  phone: string;
+  orderItems: OrderItem[];
+  totalPrice: number;
+  orderStatus: OrderStatus;
+  createdAt?: Date;
+  updatedAt: Date;
+}
+
+export interface OrderSummary {
+  orderId: string;
+  totalPrice: number;
+  orderStatus: OrderStatus;
+  createdAt: Date;
+}
+
+export interface WishListProductSummary extends WishList, ProductSummary {}
+
+export interface CartProductSummary extends CartItem, ProductSummary {}

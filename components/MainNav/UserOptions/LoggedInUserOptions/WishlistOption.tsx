@@ -1,9 +1,11 @@
+"use client";
+
 import Modal from "@/components/ui/Modal";
 import { useState } from "react";
 import { SlHeart } from "react-icons/sl";
 
 import IconButton from "@/components/ui/IconButton";
-import NavWishList from "@/components/Wishlist/NavWishList";
+import NavWishList from "@/components/Wishlist/NavWishList/NavWishList";
 
 function WishlistOption() {
   const [show, setShow] = useState(false);
