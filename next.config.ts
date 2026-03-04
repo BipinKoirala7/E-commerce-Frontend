@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "static.zara.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.asos-media.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "lh3.googleusercontent.com",
         pathname: "/**",
       },

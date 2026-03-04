@@ -1,16 +1,18 @@
 "use client";
 
 import { MotionValue, useSpring, useTransform } from "framer-motion";
-
-type ProductInfoProps = {
-  show: MotionValue<number>;
-};
-
-import IconButton from "@/components/ui/IconButton";
+import { useState } from "react";
 import { BsPatchPlus } from "react-icons/bs";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import * as motion from "motion/react-client";
-import { useState } from "react";
+
+import IconButton from "@/components/ui/IconButton";
+import { Product } from "@/types";
+
+type ProductInfoProps = {
+  show: MotionValue<number>;
+  product: Product;
+};
 
 function ProductActions({ show }: ProductInfoProps) {
   const springValue = useSpring(show, { stiffness: 300, damping: 30 });

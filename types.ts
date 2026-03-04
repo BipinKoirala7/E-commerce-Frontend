@@ -55,13 +55,18 @@ export interface CartItem {
   updatedAt: Date;
 }
 
+export interface ProductImage {
+  id: string;
+  imageUrl: string;
+}
+
 export interface Product {
   id: string;
   name: string;
   description: string;
   price: number;
   stockQuantity: number;
-  imageUrl: string;
+  images: ProductImage[];
   brand: string;
   weight: number;
   weightUnit: string;

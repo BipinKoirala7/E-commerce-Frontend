@@ -1,15 +1,21 @@
 "use client";
 
-import Hoodie from "@/public/Hoodie.webp";
+import { useMotionValue } from "framer-motion";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { Variants } from "motion";
-import ProductInfo from "./ProductInfo";
-import ProductActions from "./ProductActions";
-import { useMotionValue } from "framer-motion";
 
-function Product() {
+import ProductInfo from "@/components/Products/ProductInfo";
+import ProductActions from "@/components/Products/ProductActions";
+import { Product } from "@/types";
+
+type ProductCardProps = {
+  product: Product;
+};
+
+function ProductCard({ product }: ProductCardProps) {
   const show = useMotionValue(0);
+  console.log(product);
 
   //  Product Card Variants. Don't change the name ("hidden" and "visible"). Inherited from parent.
   const variants: Variants = {
@@ -26,17 +32,17 @@ function Product() {
     >
       <div className={"relative aspect-5/6"}>
         <Image
-          src={Hoodie}
-          alt="A hoodie image"
+          src={product.images[0].imageUrl}
+          alt={product.name}
           fill
           className="object-cover"
           loading="eager"
         />
       </div>
-      <ProductActions show={show} />
-      <ProductInfo show={show} />
+      <ProductActions show={show} product={product} />
+      <ProductInfo show={show} product={product} />
     </motion.div>
   );
 }
 
-export default Product;
+export default ProductCard;
