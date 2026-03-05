@@ -1,12 +1,12 @@
 "use client";
 
-import { Product } from "@/types";
+import { ProductSummary } from "@/types";
 import { MotionValue, useSpring, useTransform } from "framer-motion";
 import * as motion from "motion/react-client";
 
 type ProductInfoProps = {
   show: MotionValue<number>;
-  product: Product;
+  product: ProductSummary;
 };
 
 function ProductInfo({ show, product }: ProductInfoProps) {

@@ -7,11 +7,11 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import * as motion from "motion/react-client";
 
 import IconButton from "@/components/ui/IconButton";
-import { Product } from "@/types";
+import { ProductSummary } from "@/types";
 
 type ProductInfoProps = {
   show: MotionValue<number>;
-  product: Product;
+  product: ProductSummary;
 };
 
 function ProductActions({ show }: ProductInfoProps) {

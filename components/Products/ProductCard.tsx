@@ -7,10 +7,10 @@ import { Variants } from "motion";
 
 import ProductInfo from "@/components/Products/ProductInfo";
 import ProductActions from "@/components/Products/ProductActions";
-import { Product } from "@/types";
+import { ProductSummary } from "@/types";
 
 type ProductCardProps = {
-  product: Product;
+  product: ProductSummary;
 };
 
 function ProductCard({ product }: ProductCardProps) {

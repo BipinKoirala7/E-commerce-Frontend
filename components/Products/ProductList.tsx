@@ -6,13 +6,15 @@ import useSWR from "swr";
 
 import ProductCard from "@/components/Products/ProductCard";
 import { fetcher } from "@/lib/axios";
-import { ApiResponseT, Product } from "@/types";
+import { ProductSearchResponse } from "@/types";
 
 function ProductList() {
-  const { isLoading, data, error } = useSWR<ApiResponseT<Product[]>>(
+  const { isLoading, data, error } = useSWR<ProductSearchResponse>(
     process.env.NEXT_PUBLIC_BASE_PRODUCT_URL,
     fetcher,
   );
+
+  console.log(data);
 
   // Handle loading, error, and empty states
   // Make sure the message are UI friendly and are in the middle of whole container.
@@ -35,7 +37,7 @@ function ProductList() {
       </div>
     );
 
-  if (data.data.length === 0) {
+  if (data.data.content.length === 0) {
     return (
       <div className="opacity-50 text-1xl flex items-center justify-center">
         No Products found
@@ -59,7 +61,7 @@ function ProductList() {
       initial="hidden"
       animate="visible"
     >
-      {data.data.splice(0, 20).map((product) => (
+      {data.data.content.map((product) => (
         <div key={product.id} className="flex flex-col gap-2">
           <ProductCard product={product} />
         </div>
