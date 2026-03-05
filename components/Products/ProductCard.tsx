@@ -28,14 +28,19 @@ function ProductCard({ product }: ProductCardProps) {
       onMouseEnter={() => show.set(1)}
       onMouseLeave={() => show.set(0)}
       variants={variants}
-      className="relative flex flex-col rounded-lg border border-primary overflow-hidden cursor-pointer"
+      className="relative flex flex-col bg-white rounded-lg overflow-hidden cursor-pointer"
     >
-      <div className={"relative aspect-5/6"}>
+      <div
+        className={
+          "flex items-center justify-center aspect-5/7 mix-blend-multiply"
+        }
+      >
         <Image
           src={product.images[0].imageUrl}
           alt={product.name}
-          fill
-          className="object-cover"
+          width={365}
+          height={400}
+          className="object-contain w-60"
           loading="eager"
         />
       </div>

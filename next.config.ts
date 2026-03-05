@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.asos-media.com",
+        hostname: "cdn.thewatchpages.com",
         pathname: "/**",
       },
       {
