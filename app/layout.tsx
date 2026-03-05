@@ -42,12 +42,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex flex-col w-full min-h-screen text-text ${nunito.variable} ${belleza.variable} ${styleScript.variable} antialiased`}
+        className={`flex flex-col w-full text-text ${nunito.variable} ${belleza.variable} ${styleScript.variable} antialiased`}
       >
         <UserProvider>
-          <MainNav />
-          <main className="w-full min-h-screen flex-1 text-text flex justify-center">
-            {children}
+          <main className="w-full min-h-screen h-full flex flex-col">
+            <MainNav />
+            <div className="w-full flex-1 text-text flex justify-center">
+              {children}
+            </div>
           </main>
           <Footer />
         </UserProvider>

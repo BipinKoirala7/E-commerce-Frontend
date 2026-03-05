@@ -24,6 +24,18 @@ export type RegisterUserInfo = {
 export type LoginUserInfo = Omit<RegisterUserInfo, "userName">;
 
 // Product enums, interfaces, and types
+
+export type ProductSearchParams = {
+  query?: string;
+  category?: string;
+  minPrice?: string;
+  maxPrice?: string;
+  sort?: string;
+  page?: string;
+  size?: string;
+  direction: "ASC" | "DESC";
+};
+
 export interface ProductImage {
   id: string;
   imageUrl: string;

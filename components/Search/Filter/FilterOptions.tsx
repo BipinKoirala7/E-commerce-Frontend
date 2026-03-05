@@ -13,6 +13,7 @@ function FilterOptions() {
             name="sort"
             id="all"
             value="all"
+            checked={searchParamsStore.category === "all"}
             radioGroup="categories"
             onClick={(e) =>
               searchParamsStore.setCategory(e.currentTarget.value)
@@ -28,6 +29,7 @@ function FilterOptions() {
             name="sort"
             id="men"
             value="men"
+            checked={searchParamsStore.category === "men"}
             radioGroup="categories"
             onClick={(e) =>
               searchParamsStore.setCategory(e.currentTarget.value)
@@ -43,6 +45,7 @@ function FilterOptions() {
             name="sort"
             id="women"
             value="women"
+            checked={searchParamsStore.category === "women"}
             radioGroup="categories"
             onClick={(e) =>
               searchParamsStore.setCategory(e.currentTarget.value)

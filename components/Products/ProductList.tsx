@@ -2,49 +2,15 @@
 
 import * as motion from "motion/react-client";
 import { Variants } from "motion";
-import useSWR from "swr";
 
 import ProductCard from "@/components/Products/ProductCard";
-import { fetcher } from "@/lib/axios";
-import { ProductSearchResponse } from "@/types";
+import { ProductSummary } from "@/types";
 
-function ProductList() {
-  const { isLoading, data, error } = useSWR<ProductSearchResponse>(
-    process.env.NEXT_PUBLIC_BASE_PRODUCT_URL,
-    fetcher,
-  );
+type ProductListProps = {
+  products: ProductSummary[];
+};
 
-  console.log(data);
-
-  // Handle loading, error, and empty states
-  // Make sure the message are UI friendly and are in the middle of whole container.
-  if (isLoading)
-    return (
-      <div className="opacity-50 text-1xl flex items-center justify-center">
-        Loading...
-      </div>
-    );
-  if (error)
-    return (
-      <div className="opacity-50 text-1xl flex items-center justify-center">
-        Error loading Products
-      </div>
-    );
-  if (data == null)
-    return (
-      <div className="opacity-50 text-1xl flex items-center justify-center">
-        Something went wrong
-      </div>
-    );
-
-  if (data.data.content.length === 0) {
-    return (
-      <div className="opacity-50 text-1xl flex items-center justify-center">
-        No Products found
-      </div>
-    );
-  }
-
+function ProductList({ products }: ProductListProps) {
   const variants: Variants = {
     hidden: {},
     visible: {
@@ -56,12 +22,12 @@ function ProductList() {
   };
   return (
     <motion.div
-      className="grow w-full h-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4"
+      className="grow w-full min-h-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4"
       variants={variants}
       initial="hidden"
       animate="visible"
     >
-      {data.data.content.map((product) => (
+      {products.map((product) => (
         <div key={product.id} className="flex flex-col gap-2">
           <ProductCard product={product} />
         </div>

@@ -42,7 +42,7 @@ const useSearchParamsStore = create<SearchParamsStoreT>((set) => ({
   query: "",
   category: "",
   minPrice: "",
-  maxPrice: "9999",
+  maxPrice: "",
   sort: "",
   page: "",
   size: "",

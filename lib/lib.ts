@@ -1,23 +1,13 @@
-export const productSearchUrl = (
-  query: string,
-  category: string,
-  minPrice: string,
-  maxPrice: string,
-  page: string,
-  size: string,
+import { ProductSearchParams } from "@/types";
 
-  sort: string,
-  direction: "ASC" | "DESC",
-) => {
+export const productSearchUrl = (params: ProductSearchParams) => {
+  const searchParams = new URLSearchParams(
+    Object.entries(params).filter(
+      ([_, value]) => value != null && value !== "",
+    ),
+  );
+
   return (
-    process.env.NEXT_PUBLIC_BASE_PRODUCT_URL +
-    `?query=${query}` +
-    `&category=${category}` +
-    `&minPrice=${minPrice}` +
-    `&maxPrice=${maxPrice}` +
-    `&page=${page}` +
-    `&size=${size}` +
-    `&sort=${sort}` +
-    `&direction=${direction}`
+    process.env.NEXT_PUBLIC_BASE_PRODUCT_URL + "?" + searchParams.toString()
   );
 };
