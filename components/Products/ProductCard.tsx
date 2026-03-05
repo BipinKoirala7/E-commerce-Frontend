@@ -38,9 +38,9 @@ function ProductCard({ product }: ProductCardProps) {
         <Image
           src={product.images[0].imageUrl}
           alt={product.name}
-          width={365}
-          height={400}
-          className="object-contain w-60"
+          width={500}
+          height={100}
+          className="object-contain max-h-100"
           loading="eager"
         />
       </div>

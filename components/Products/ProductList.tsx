@@ -22,7 +22,8 @@ function ProductList({ products }: ProductListProps) {
   };
   return (
     <motion.div
-      className="grow w-full min-h-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4"
+      // [repeat(auto-fit,minmax(250px,1fr))]
+      className="grow w-full min-h-full grid grid-cols-4 gap-4"
       variants={variants}
       initial="hidden"
       animate="visible"
