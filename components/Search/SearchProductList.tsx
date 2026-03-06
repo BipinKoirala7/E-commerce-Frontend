@@ -4,6 +4,7 @@ import { useSearchParamsStore } from "@/store/zustand";
 import { ProductSearchParams, ProductSearchResponse } from "@/types";
 import useSWR from "swr";
 import ProductList from "../Products/ProductList";
+import Pagination from "./Pagination/Pagination";
 
 function SearchProductList() {
   const store = useSearchParamsStore();
@@ -54,8 +55,15 @@ function SearchProductList() {
   }
 
   return (
-    <div className="min-h-full flex">
+    <div className="min-h-full flex flex-col gap-8">
       <ProductList products={data.data.content} />;
+      <Pagination
+        currentPage={data.data.currentPage}
+        totalPages={data.data.totalPages}
+        isFirst={data.data.isFirst}
+        isLast={data.data.isLast}
+        numberOfElements={data.data.numberOfElements}
+      />
     </div>
   );
 }

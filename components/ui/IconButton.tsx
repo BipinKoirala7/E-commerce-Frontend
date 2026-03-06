@@ -7,12 +7,15 @@ type IconButtonT = {
   className?: string;
   //  Function for onClick
   onClick?: () => void;
+  //  Disables the button
+  disabled?: boolean;
 };
 
 function IconButton(props: IconButtonT) {
-  const { icon, className, onClick } = props;
+  const { icon, className, onClick, disabled } = props;
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       // Uses theme foreground color for hover state
       // Transition timing defined in globals.css (.smooth-transition)
