@@ -1,13 +1,14 @@
 "use client";
 
-import IconButton from "@/components/ui/IconButton";
 import { fetcher } from "@/lib/axios";
 import { productDetailsUrl } from "@/lib/lib";
 import { ProductDetailsResponse } from "@/types";
-import Image from "next/image";
-import { BsPatchPlus } from "react-icons/bs";
-import { FaRegHeart } from "react-icons/fa";
+
 import useSWR from "swr";
+import ProductDetailsActions from "./ProductDetailsActions";
+import ProductDetailsInfo from "@/components/Product/ProductDetails/ProductDetailsInfo";
+import ProductDetailsMainImage from "./ProductDetailsMainImage";
+import ProductDetailsImageOptions from "./ProductDetailsImageOptions";
 
 function ProductDetailsPage({ productId }: { productId: string }) {
   console.log(productId);
@@ -45,52 +46,16 @@ function ProductDetailsPage({ productId }: { productId: string }) {
     );
   return (
     <div className="w-full h-full grid grid-cols-2 gap-8">
-      <div className="w-full flex items-center justify-center p-2">
-        <Image
-          src={data.data.images[0].imageUrl}
-          alt={data.data.name}
-          width={600}
-          height={600}
-          className="w-auto h-auto object-contain"
-          loading="eager"
-        />
-      </div>
+      <ProductDetailsMainImage productImage={data.data.images[0]} />
       <div className="flex flex-col gap-4 py-20">
-        <div className="flex flex-col gap-2">
-          <p className="flex text-7xl header-font">{data.data.brand}</p>
-          <p className="text-4xl">{data.data.name}</p>
-        </div>
-        <div className="flex flex-col gap-2">
-          {data.data.images.map((img) => (
-            <div
-              key={img.id}
-              className="w-fit bg-foreground flex items-center justify-center p-2 cursor-pointer hover:bg-secondary smooth-transition"
-            >
-              <Image
-                src={img.imageUrl}
-                alt={img.id}
-                width={100}
-                height={100}
-                className="w-fit h-32 object-contain max-h-100 bg-primary"
-                loading="eager"
-              />
-            </div>
-          ))}
-        </div>
+        <ProductDetailsInfo
+          name={data.data.name}
+          price={data.data.price}
+          brand={data.data.brand}
+        />
+        <ProductDetailsImageOptions productImages={data.data.images} />
         <p>{data.data.description}</p>
-        <p id="logo" className="text-2xl font-bold logo-font">
-          ${data.data.price}
-        </p>
-        <div className="flex gap-4 items-center">
-          <IconButton
-            className="p-3 border border-primary"
-            icon={<FaRegHeart className="w-8 h-8" />}
-          />
-          <button className="bg-text flex gap-4 items-center rounded-4xl border border-text px-4 py-3 text-white cursor-pointer">
-            <BsPatchPlus className="w-8 h-8" />
-            <p>Add to Cart</p>
-          </button>
-        </div>
+        <ProductDetailsActions />
       </div>
     </div>
   );
