@@ -5,8 +5,8 @@ import Image from "next/image";
 import * as motion from "motion/react-client";
 import { Variants } from "motion";
 
-import ProductInfo from "@/components/Products/ProductInfo";
-import ProductActions from "@/components/Products/ProductActions";
+import ProductInfo from "@/components/Product/ProductInfo";
+import ProductActions from "@/components/Product/ProductActions";
 import { ProductSummary } from "@/types";
 
 type ProductCardProps = {

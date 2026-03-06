@@ -3,7 +3,7 @@
 import * as motion from "motion/react-client";
 import { Variants } from "motion";
 
-import ProductCard from "@/components/Products/ProductCard";
+import ProductCard from "@/components/Product/ProductCard";
 import { ProductSummary } from "@/types";
 
 type ProductListProps = {

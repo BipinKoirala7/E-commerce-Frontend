@@ -3,7 +3,7 @@
 import { fetcher } from "@/lib/axios";
 import { ProductSearchResponse } from "@/types";
 import useSWR from "swr";
-import ProductList from "../Products/ProductList";
+import ProductList from "@/components/Product/ProductList";
 import { productCategorySearchUrl } from "@/lib/lib";
 
 type CategoryProductListProps = {

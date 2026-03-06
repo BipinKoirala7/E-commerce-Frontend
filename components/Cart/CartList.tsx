@@ -1,13 +1,13 @@
 "use client";
 
-import { ApiResponseT, CartProductSummary } from "@/types";
+import { ApiResponse, CartProductSummary } from "@/types";
 import CartCard from "./CartCard";
 import { fetcher } from "@/lib/axios";
 import useSWR from "swr";
 import SelectedCartInfo from "./SelectedCartInfo";
 
 function CartList() {
-  const { isLoading, data, error } = useSWR<ApiResponseT<CartProductSummary[]>>(
+  const { isLoading, data, error } = useSWR<ApiResponse<CartProductSummary[]>>(
     process.env.NEXT_PUBLIC_BASE_CART_URL,
     fetcher,
   );

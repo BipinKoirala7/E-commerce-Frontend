@@ -162,3 +162,4 @@ export type PageableResult<T> = {
 };
 
 export type ProductSearchResponse = ApiResponse<ProductSearchResult>;
+export type ProductDetailsResponse = ApiResponse<Product>;

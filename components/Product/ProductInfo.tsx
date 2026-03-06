@@ -4,6 +4,7 @@ import { ProductSummary } from "@/types";
 
 import { MotionValue, useSpring, useTransform } from "framer-motion";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 
 type ProductInfoProps = {
   show: MotionValue<number>;
@@ -19,12 +20,14 @@ function ProductInfo({ show, product }: ProductInfoProps) {
         style={{ bottom: bottomPos }}
         className={`absolute left-1/2 -translate-x-1/2 w-full bg-text text-foreground rounded-sm`}
       >
-        <div className="flex flex-col gap-2 p-2">
-          <p className={`text-2xl single-line header-font smooth-transition`}>
-            {product.name.toWellFormed()}
-          </p>
+        <Link
+          href={`/product/${product.id}`}
+          className="flex flex-col gap-2 p-2"
+        >
+          <p className="text-2xl header-font">{product.brand.toWellFormed()}</p>
+          <p className={`single-line`}>{product.name.toWellFormed()}</p>
           <p className={"font-bold"}>${product.price}</p>
-        </div>
+        </Link>
       </motion.div>
     </>
   );

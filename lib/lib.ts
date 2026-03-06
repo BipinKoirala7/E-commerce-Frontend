@@ -23,5 +23,9 @@ export const productCategorySearchUrl = (category: string) => {
   );
 };
 
+export const productDetailsUrl = (productId: string) => {
+  return baseUrl + process.env.NEXT_PUBLIC_BASE_PRODUCT_URL + "/" + productId;
+};
+
 export const capitalize = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1);
