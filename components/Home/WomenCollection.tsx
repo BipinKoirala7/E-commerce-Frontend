@@ -2,7 +2,7 @@ import WomenCollectionShowCase from "./WomenCollectionShowCase";
 
 function WomenCollection() {
   return (
-    <div className="min-h-100 flex flex-col gap-4 p-6 bg-primary rounded-4xl">
+    <div className="min-h-100 flex flex-col gap-4 p-6 bg-foreground rounded-4xl">
       <p className="text-3xl header-font font-bold">Womens Collection</p>
       <div className="w-full h-full flex">
         <WomenCollectionShowCase />

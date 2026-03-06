@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { User } from "@/types";
+import { Category, SortDirection, User } from "@/types";
 
 export type UserStoreT = {
   user: User | null;
@@ -10,28 +10,28 @@ export type UserStoreT = {
 
 export type SearchParamsStoreT = {
   query: string;
-  category: string;
+  category: Category;
   minPrice: string;
   maxPrice: string;
   sort: string;
   page: string;
   size: string;
-  direction: "ASC" | "DESC";
+  direction: SortDirection;
   //  Setters
   setQuery: (query: string) => void;
-  setCategory: (category: string) => void;
+  setCategory: (category: Category) => void;
   setPriceRange: (minPrice: string, maxPrice: string) => void;
   setSort: (sortBy: string) => void;
   setPage: (page: string) => void;
   setSize: (size: string) => void;
-  setDirection: (direction: "ASC" | "DESC") => void;
+  setDirection: (direction: SortDirection) => void;
 };
 
 const useUserStore = create<UserStoreT>((set, get) => ({
   user: null,
   setUser: (user) => set({ user }),
   removeUser: () => set({ user: null }),
-  isAuthenticated: () => !get().user, // !! to get the right boolean value
+  isAuthenticated: () => !!get().user, // !! to get the right boolean value
 }));
 
 const setUser = (user: User | null) =>
@@ -40,7 +40,7 @@ const setUser = (user: User | null) =>
 // Need to change the maxPrice according to the max price of the products that came
 const useSearchParamsStore = create<SearchParamsStoreT>((set) => ({
   query: "",
-  category: "",
+  category: "all",
   minPrice: "",
   maxPrice: "",
   sort: "",

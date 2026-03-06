@@ -23,7 +23,7 @@ function ProductList({ products }: ProductListProps) {
   return (
     <motion.div
       // [repeat(auto-fit,minmax(250px,1fr))]
-      className="grow w-full min-h-full grid grid-cols-4 gap-4"
+      className="grow w-full h-full grid grid-cols-4 gap-4"
       variants={variants}
       initial="hidden"
       animate="visible"

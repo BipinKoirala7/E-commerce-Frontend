@@ -25,6 +25,14 @@ export type LoginUserInfo = Omit<RegisterUserInfo, "userName">;
 
 // Product enums, interfaces, and types
 
+export const Category = {
+  All: "all",
+  Men: "men",
+  Women: "women",
+} as const;
+
+export type Category = (typeof Category)[keyof typeof Category];
+
 export type ProductSearchParams = {
   query?: string;
   category?: string;
@@ -134,6 +142,13 @@ export type ApiResponse<T> = {
 };
 
 // Common enums, interfaces, and types
+
+export const SortDirection = {
+  Ascending: "ASC",
+  Descending: "DESC",
+} as const;
+
+export type SortDirection = (typeof SortDirection)[keyof typeof SortDirection];
 
 export type PageableResult<T> = {
   content: T[];

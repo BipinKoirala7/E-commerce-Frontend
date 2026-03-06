@@ -53,7 +53,11 @@ function SearchProductList() {
     );
   }
 
-  return <ProductList products={data.data.content} />;
+  return (
+    <div className="min-h-full flex">
+      <ProductList products={data.data.content} />;
+    </div>
+  );
 }
 
 export default SearchProductList;
