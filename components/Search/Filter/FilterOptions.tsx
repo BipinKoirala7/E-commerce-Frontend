@@ -1,6 +1,7 @@
 import { capitalize } from "@/lib/lib";
 import { useSearchParamsStore } from "@/store/zustand";
 import { Category } from "@/types";
+import toast from "react-hot-toast";
 
 function FilterOptions() {
   const searchParamsStore = useSearchParamsStore();
@@ -43,12 +44,16 @@ function FilterOptions() {
                 id="minPrice"
                 min={searchParamsStore.maxPrice}
                 value={searchParamsStore.minPrice}
-                onChange={(e) =>
+                onChange={(e) => {
+                  if (e.currentTarget.value >= searchParamsStore.maxPrice) {
+                    toast.error("Max Price cannot be less than Min Price");
+                    return;
+                  }
                   searchParamsStore.setPriceRange(
                     e.currentTarget.value,
                     searchParamsStore.maxPrice,
-                  )
-                }
+                  );
+                }}
                 className="outline-none bg-primary px-2 py-1"
               />
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { productCategorySearchUrl } from "@/lib/lib";
-import ProductList from "../Products/ProductList";
+import ProductList from "@/components/Product/ProductList";
 import { fetcher } from "@/lib/axios";
 import useSWR from "swr";
 

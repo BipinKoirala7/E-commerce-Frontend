@@ -3,8 +3,8 @@ import { productSearchUrl } from "@/lib/lib";
 import { useSearchParamsStore } from "@/store/zustand";
 import { ProductSearchParams, ProductSearchResponse } from "@/types";
 import useSWR from "swr";
-import ProductList from "../Products/ProductList";
-import Pagination from "./Pagination/Pagination";
+import ProductList from "@/components/Product/ProductList";
+import Pagination from "@/components/Search/Pagination/Pagination";
 
 function SearchProductList() {
   const store = useSearchParamsStore();

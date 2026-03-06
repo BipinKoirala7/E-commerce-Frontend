@@ -8,6 +8,7 @@ import MainNav from "../components/MainNav/MainNav";
 import Footer from "../components/Footer/Footer";
 import React from "react";
 import UserProvider from "@/Context/UserProvider";
+import { Toaster } from "react-hot-toast";
 
 //  Adding Nunito Font for Standard use
 const nunito = Nunito({
@@ -52,6 +53,7 @@ export default async function RootLayout({
             </div>
           </main>
           <Footer />
+          <Toaster />
         </UserProvider>
       </body>
     </html>
