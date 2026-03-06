@@ -7,10 +7,10 @@ function FilterOptions() {
 
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-2xl header-font">Filter</p>
+      <p className="text-3xl header-font">Filter</p>
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
-          <p>Category</p>
+          <p className="text-xl">Category</p>
           <div className="flex flex-col gap-2">
             {Object.values(Category).map((category) => {
               return (
@@ -33,21 +33,39 @@ function FilterOptions() {
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <p className="">Price Range</p>
+          <p className="text-xl">Price Range</p>
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-2">
+              <label htmlFor="">Min Price: </label>
               <input
-                type="range"
-                name="sort"
-                id="ascending"
-                min={0}
-                max={9999}
+                type="text"
+                name="minPrice"
+                id="minPrice"
+                min={searchParamsStore.maxPrice}
+                value={searchParamsStore.minPrice}
                 onChange={(e) =>
                   searchParamsStore.setPriceRange(
                     e.currentTarget.value,
                     searchParamsStore.maxPrice,
                   )
                 }
+                className="outline-none bg-primary px-2 py-1"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="">Max Price: </label>
+              <input
+                type="text"
+                name="maxPrice"
+                id="maxPrice"
+                value={searchParamsStore.maxPrice}
+                onChange={(e) =>
+                  searchParamsStore.setPriceRange(
+                    searchParamsStore.minPrice,
+                    e.currentTarget.value,
+                  )
+                }
+                className="outline-none bg-primary px-2 py-1"
               />
             </div>
           </div>
