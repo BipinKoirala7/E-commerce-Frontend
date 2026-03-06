@@ -15,7 +15,6 @@ type ProductCardProps = {
 
 function ProductCard({ product }: ProductCardProps) {
   const show = useMotionValue(0);
-  console.log(product);
 
   //  Product Card Variants. Don't change the name ("hidden" and "visible"). Inherited from parent.
   const variants: Variants = {
@@ -28,7 +27,7 @@ function ProductCard({ product }: ProductCardProps) {
       onMouseEnter={() => show.set(1)}
       onMouseLeave={() => show.set(0)}
       variants={variants}
-      className="relative flex flex-col bg-white rounded-lg overflow-hidden cursor-pointer"
+      className="relative bg-foreground rounded-sm overflow-hidden cursor-pointer"
     >
       <div
         className={
